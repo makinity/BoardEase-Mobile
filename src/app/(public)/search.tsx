@@ -4,8 +4,6 @@ import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'r
 
 import { useAuth } from '@/providers/AuthProvider';
 import { useAuthStore } from '@/store/auth.store';
-import { useAuth } from '@/providers/AuthProvider';
-import { useAuthStore } from '@/store/auth.store';
 import { useProperties } from '@/features/properties';
 import { Colors, Radius, Shadow, Spacing } from '@/theme/design';
 
