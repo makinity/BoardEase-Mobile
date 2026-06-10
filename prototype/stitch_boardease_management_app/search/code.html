@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BoardEase - Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#dbe9ff",
+                    "on-background": "#011d35",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#005ea1",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#91f8b8",
+                    "outline": "#717782",
+                    "surface-container-low": "#eef4ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#fffbff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006d40",
+                    "on-error": "#ffffff",
+                    "tertiary": "#7a5500",
+                    "inverse-primary": "#9fcaff",
+                    "on-secondary-fixed-variant": "#00522f",
+                    "surface-container": "#e4efff",
+                    "tertiary-fixed-dim": "#f8bc4b",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#e9f1ff",
+                    "tertiary-container": "#996c00",
+                    "surface-dim": "#c4dcfd",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d1e4ff",
+                    "on-secondary-fixed": "#002110",
+                    "tertiary-fixed": "#ffdeaa",
+                    "on-primary-fixed": "#001d37",
+                    "secondary-container": "#8ef5b5",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#d2e4ff",
+                    "primary-fixed-dim": "#9fcaff",
+                    "on-surface": "#011d35",
+                    "surface-tint": "#0061a5",
+                    "on-surface-variant": "#414751",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d1e4ff",
+                    "primary-container": "#2178c3",
+                    "inverse-surface": "#19324b",
+                    "on-primary-fixed-variant": "#00497e",
+                    "outline-variant": "#c0c7d3",
+                    "secondary-fixed-dim": "#74db9d",
+                    "on-tertiary-fixed": "#271900",
+                    "on-primary-container": "#fdfcff",
+                    "on-secondary-container": "#007243"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim shadow-sm flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:scale-95 duration-150 p-2 rounded-full hover:bg-surface-container-low transition-colors">
+                menu
+            </button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BoardEase</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profile Photo" class="w-full h-full object-cover" data-alt="A professional headshot of a friendly Filipino property manager in his late 30s, wearing a clean white polo shirt. The background is a brightly lit, modern office space with soft-focus greenery, creating a trustworthy and professional atmosphere. The lighting is natural and high-key, maintaining the clean light-mode aesthetic of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB07pwGdtn4xfJ4nMYEuBazNHwg2DT9JfWANZrqBZvYTQXpB6BDFH7JI00wwn9s4yCQePqD-7SPbvcK6bQ08lNh2xzuHTCqMOYU6ZVm9tNCnf-Xmag5Gy00jNkEv5mQRE8eVS9LQsoJrtYkCXk8U6-eU0Vbw2xYAivUI0xMDdDtjmuuy9RUGtJb59X-HDWDLLUuHpwAkGzSdVwrPi6hErldofla8p1vPPDsq539gw_N0XY-VQfwUv_GnsyLYNHge9lPZBHyC7FD_hY"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 pb-24 px-margin-mobile flex flex-col">
+<!-- Search Section -->
+<section class="mt-8 space-y-6">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Search</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Find your perfect home or room in the Philippines.</p>
+</div>
+<!-- Search Input with Focus State -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-lg text-body-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline" id="searchInput" oninput="handleSearch(this.value)" placeholder="Location, price, or room type..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors">tune</button>
+</div>
+</div>
+</section>
+<!-- Empty State Container -->
+<section class="flex-1 flex flex-col items-center justify-center py-12 text-center transition-opacity duration-300" id="emptyState">
+<div class="relative mb-6">
+<!-- Atmospheric background for empty state -->
+<div class="absolute inset-0 bg-primary-container/10 blur-3xl rounded-full scale-150"></div>
+<div class="w-32 h-32 bg-surface-container rounded-full flex items-center justify-center relative shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 0, 'wght' 300;">search_off</span>
+</div>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2">Start Exploring</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[240px]" id="emptyStateText">Type at least 2 characters to search</p>
+<!-- Quick Suggestions (Modern Bento-ish chips) -->
+<div class="mt-8 flex flex-wrap justify-center gap-2 max-w-sm">
+<span class="px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full text-label-md font-label-md cursor-pointer hover:bg-secondary-container/40 transition-colors">Manila</span>
+<span class="px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full text-label-md font-label-md cursor-pointer hover:bg-secondary-container/40 transition-colors">Quezon City</span>
+<span class="px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full text-label-md font-label-md cursor-pointer hover:bg-secondary-container/40 transition-colors">Budget Friendly</span>
+<span class="px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full text-label-md font-label-md cursor-pointer hover:bg-secondary-container/40 transition-colors">Solo Rooms</span>
+</div>
+</section>
+<!-- Search Results (Hidden by default) -->
+<section class="hidden mt-4 space-y-4" id="searchResults">
+<div class="flex justify-between items-center px-1">
+<span class="text-label-md font-label-md text-outline uppercase tracking-wider">Results</span>
+<span class="text-label-sm font-label-sm text-primary">Clear all</span>
+</div>
+<!-- Result Cards (Modern Layout) -->
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex gap-4 active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Modern Room" class="w-full h-full object-cover" data-alt="A brightly lit, modern studio apartment interior with white walls, minimalist wooden furniture, and large windows. The style is clean and corporate-modern, following a light-mode aesthetic with soft blue accents. High-quality sunlight filters through sheer curtains, creating a warm and welcoming residential atmosphere suited for a premium Philippine rental market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrHYnG-tuo--oWytQUpLgiDHzD-C_yD-ptCx2blckPCy-mSj_uDpzX4rUaADU6CZ-PyZ8EUiO0EhoevKvjp9lyh7c87-Ml055FrwqVU7oj5CXDu1CLEK4kMFMQyu44Sl3V1OmgtHDkxY_Pg-5-0QKSAZbZDJoLogFdLRpJjHl7LKhEqQBOZOGHZUkP5u5gSwRPMzWYN8UGkd6OE85qo2Mofkb154KubE_0_OKmKeYyY4vEB-XTUqh52aP-0iwKMqlj-iIqKAQk_3k"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start">
+<h4 class="font-title-lg text-body-lg font-bold text-on-surface">Modern Studio Unit</h4>
+<span class="text-primary font-bold">₱15,000</span>
+</div>
+<p class="text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Makati City
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline bg-surface dark:bg-surface-container-lowest shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Properties -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-label-sm text-label-sm">Properties</span>
+</a>
+<!-- Search (Active State) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/10 rounded-xl px-3 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        function handleSearch(val) {
+            const emptyState = document.getElementById('emptyState');
+            const searchResults = document.getElementById('searchResults');
+            const emptyStateText = document.getElementById('emptyStateText');
+
+            if (val.length >= 2) {
+                // Fade out empty state and show results
+                emptyState.style.opacity = '0';
+                setTimeout(() => {
+                    emptyState.classList.add('hidden');
+                    searchResults.classList.remove('hidden');
+                    searchResults.style.opacity = '0';
+                    setTimeout(() => {
+                        searchResults.style.opacity = '1';
+                        searchResults.classList.add('transition-opacity', 'duration-300');
+                    }, 10);
+                }, 300);
+            } else {
+                // Show empty state
+                searchResults.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                setTimeout(() => {
+                    emptyState.style.opacity = '1';
+                }, 10);
+                
+                if (val.length === 1) {
+                    emptyStateText.textContent = "Keep typing... just one more character";
+                    emptyStateText.classList.add('text-primary');
+                } else {
+                    emptyStateText.textContent = "Type at least 2 characters to search";
+                    emptyStateText.classList.remove('text-primary');
+                }
+            }
+        }
+
+        // Initialize state
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('searchInput');
+            // Force focus on desktop to show focus state intent
+            if (window.innerWidth > 768) {
+                input.focus();
+            }
+        });
+    </script>
+</body></html>

@@ -8,10 +8,11 @@ export default function RootIndex() {
   const role = useAuthStore((s) => s.role);
 
   if (isLoading) return null;
-
   if (!session) return <Redirect href="/(auth)/login" />;
 
-  if (role === 'owner') return <Redirect href="/(owner)/dashboard" />;
+  // Wait for role to be loaded from profile before redirecting
+  if (!role) return null;
 
+  if (role === 'owner') return <Redirect href="/(owner)/dashboard" />;
   return <Redirect href="/(occupant)/dashboard" />;
 }

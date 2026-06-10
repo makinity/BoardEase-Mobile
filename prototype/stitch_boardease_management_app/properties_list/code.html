@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#dbe9ff",
+                    "on-background": "#011d35",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#005ea1",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#91f8b8",
+                    "outline": "#717782",
+                    "surface-container-low": "#eef4ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#fffbff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006d40",
+                    "on-error": "#ffffff",
+                    "tertiary": "#7a5500",
+                    "inverse-primary": "#9fcaff",
+                    "on-secondary-fixed-variant": "#00522f",
+                    "surface-container": "#e4efff",
+                    "tertiary-fixed-dim": "#f8bc4b",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#e9f1ff",
+                    "tertiary-container": "#996c00",
+                    "surface-dim": "#c4dcfd",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d1e4ff",
+                    "on-secondary-fixed": "#002110",
+                    "tertiary-fixed": "#ffdeaa",
+                    "on-primary-fixed": "#001d37",
+                    "secondary-container": "#8ef5b5",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#d2e4ff",
+                    "primary-fixed-dim": "#9fcaff",
+                    "on-surface": "#011d35",
+                    "surface-tint": "#0061a5",
+                    "on-surface-variant": "#414751",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d1e4ff",
+                    "primary-container": "#2178c3",
+                    "inverse-surface": "#19324b",
+                    "on-primary-fixed-variant": "#00497e",
+                    "outline-variant": "#c0c7d3",
+                    "secondary-fixed-dim": "#74db9d",
+                    "on-tertiary-fixed": "#271900",
+                    "on-primary-container": "#fdfcff",
+                    "on-secondary-container": "#007243"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim shadow-sm flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BoardEase</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border-2 border-surface-container-high">
+<img alt="Profile Photo" class="w-full h-full object-cover" data-alt="A professional headshot of a young Filipino property manager smiling warmly against a blurred office background. The lighting is soft and natural, emphasizing a trustworthy and friendly persona. The overall aesthetic is clean and corporate, matching a modern property management application's high-end UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVVcy-HYaWHH3m0WwJXt8ARX9stqe82TMVtHEETrs8apG-DJkYzhuxTyZUVGKpEvp9d9leuq4L4tsY7ohxk9tkAJj1Qivg4HyYIHOIrXO1tjPhjeYJcZJq4IABAg8k9vvZuCU_b0QBqOyBgct6m8nGdZeSk6fW_yqiPacxo8gWVodFzmx0zyylJpS4Gqn2lL1i8LKXMP8tp7ewCf4XZRyM5YF5Na-tMfSKasVmsXWnI5zMmSIj8iV3c3vE6HNrfEQLWGf3CAYNPwI"/>
+</div>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile max-w-4xl mx-auto">
+<!-- Title & Search Section -->
+<section class="py-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-lg">Properties</h2>
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant bg-surface rounded-xl focus:ring-2 focus:ring-primary focus:border-primary font-body-md transition-all shadow-sm" placeholder="Search properties, areas, or prices..." type="text"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-primary font-label-md">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</section>
+<!-- Properties Grid -->
+<section class="flex flex-col gap-lg">
+<!-- Property Card: Sunrise Boarding House -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant soft-shadow overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Sunrise Boarding House" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright and airy boarding house room in Manila with white walls and minimalist wooden furniture. Large windows let in golden morning sunlight, casting soft shadows. The interior is decorated with a small potted plant and a neatly made bed with blue linens, evoking a professional, clean, and welcoming atmosphere for students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKuvVnbgsUgNIzRc5TR3FzPpCTpsxvNTrsI8w__uo6XjZ8G-tKsNjRsTkDNAzdEFuncm4ftrmC0h5knOvGhxCAt5IVu5ZC1tENan_9QgGVZBjwad1jfvyu5kN3QCZ10IiHc2yq-tH_Dg7gOQEgILof4YEzxCjjY92I2CE7Hq2FkqLeVgARrzQ-215zR_oRNe5JpkCTE291ez7q-rcZu7RKr2bUGVK3B8EGX-3CSAL3Qvq8sCKUZZa9YtplGN-xVM81PfA0AyPXbz4"/>
+<div class="absolute top-3 right-3 bg-secondary-container/90 backdrop-blur-sm text-on-secondary-container px-3 py-1 rounded-full font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Available
+                    </div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-title-lg text-title-lg text-on-background">Sunrise Boarding House</h3>
+<span class="text-primary font-title-lg">₱4,500<span class="text-on-surface-variant text-label-sm font-normal">/mo</span></span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md mb-md">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>123 Sampaloc St., Manila</span>
+</div>
+<div class="flex items-center gap-4 text-outline font-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">bed</span> 2 Beds
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">wifi</span> Free WiFi
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span> Aircon
+                        </div>
+</div>
+</div>
+</div>
+<!-- Property Card: City Stay Residences -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant soft-shadow overflow-hidden group active:scale-[0.98] transition-transform duration-200">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="City Stay Residences" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern high-rise residential building interior featuring a sleek studio apartment with gray flooring and contemporary decor. The lighting is crisp and even, highlighting premium finishes and urban lifestyle appeal. Outside the window, a glimpse of the city skyline is visible, suggesting a central location in a business district. Professional architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3kZ7qnfMrALlyb7x-94GfKu2zexEb9mY7ls_0OuKh50xCjjO6A6I2cHY0Wot4SgRqZa6Sy8CTIRbv7vHpct0Bx5qk07piWbemRJSNtebkHMsem61KNU_XTdDmvCdDwHfTfrIqjqfTKZ_ttgY3IqHDrfrn3beEtVUQCsZmtjvjfvyjBhwapVlT0Hg-KG6w_Q7KExwhX5JbWDuXDGIL4tWykksRf4EgRNvO_kmD2FV_8oA9K7ekXq3wXiimnTnBfoFuvI9-BGZZd0"/>
+<div class="absolute top-3 right-3 bg-tertiary-container/90 backdrop-blur-sm text-on-tertiary-container px-3 py-1 rounded-full font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> 2 Slots Left
+                    </div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-title-lg text-title-lg text-on-background">City Stay Residences</h3>
+<span class="text-primary font-title-lg">₱7,200<span class="text-on-surface-variant text-label-sm font-normal">/mo</span></span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-md mb-md">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>456 Makati Ave., Makati City</span>
+</div>
+<div class="flex items-center gap-4 text-outline font-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">apartment</span> Solo Room
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">shield</span> 24/7 Security
+                        </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">atm</span> Fitness Gym
+                        </div>
+</div>
+</div>
+</div>
+<!-- Empty State / Additional Card Hint -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl h-24 flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+<span class="font-label-md">Suggest a Property</span>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline bg-surface dark:bg-surface-container-lowest shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Properties (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/10 rounded-xl px-3 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="font-label-sm text-label-sm">Properties</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (Suppressed on List page as per instructions, but available for interaction) -->
+<div class="fixed right-6 bottom-24 z-40 hidden md:block">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<script>
+        // Simple search filtering interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        const propertyCards = document.querySelectorAll('main section:last-of-type > div[class*="bg-surface-container-lowest"]');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            propertyCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const address = card.querySelector('.font-body-md span:last-child').textContent.toLowerCase();
+                if (title.includes(term) || address.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Feedback for navigation clicks
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(nav => {
+                    nav.classList.remove('text-primary', 'dark:text-primary-fixed', 'bg-secondary-container/10', 'rounded-xl', 'px-3', 'py-1');
+                    nav.classList.add('text-on-surface-variant', 'dark:text-outline');
+                    const icon = nav.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                item.classList.remove('text-on-surface-variant', 'dark:text-outline');
+                item.classList.add('text-primary', 'dark:text-primary-fixed', 'bg-secondary-container/10', 'rounded-xl', 'px-3', 'py-1');
+                const activeIcon = item.querySelector('.material-symbols-outlined');
+                if (activeIcon) activeIcon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Room A1 - BoardEase</title>
+<!-- Material Symbols Link -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "surface-container-high": "#dbe9ff",
+                  "on-background": "#011d35",
+                  "on-tertiary-fixed-variant": "#5f4100",
+                  "surface-bright": "#f8f9ff",
+                  "primary": "#005ea1",
+                  "surface-container-lowest": "#ffffff",
+                  "secondary-fixed": "#91f8b8",
+                  "outline": "#717782",
+                  "surface-container-low": "#eef4ff",
+                  "error": "#ba1a1a",
+                  "on-tertiary-container": "#fffbff",
+                  "on-tertiary": "#ffffff",
+                  "secondary": "#006d40",
+                  "on-error": "#ffffff",
+                  "tertiary": "#7a5500",
+                  "inverse-primary": "#9fcaff",
+                  "on-secondary-fixed-variant": "#00522f",
+                  "surface-container": "#e4efff",
+                  "tertiary-fixed-dim": "#f8bc4b",
+                  "on-error-container": "#93000a",
+                  "on-primary": "#ffffff",
+                  "inverse-on-surface": "#e9f1ff",
+                  "tertiary-container": "#996c00",
+                  "surface-dim": "#c4dcfd",
+                  "background": "#f8f9ff",
+                  "surface-variant": "#d1e4ff",
+                  "on-secondary-fixed": "#002110",
+                  "tertiary-fixed": "#ffdeaa",
+                  "on-primary-fixed": "#001d37",
+                  "secondary-container": "#8ef5b5",
+                  "surface": "#f8f9ff",
+                  "primary-fixed": "#d2e4ff",
+                  "primary-fixed-dim": "#9fcaff",
+                  "on-surface": "#011d35",
+                  "surface-tint": "#0061a5",
+                  "on-surface-variant": "#414751",
+                  "error-container": "#ffdad6",
+                  "on-secondary": "#ffffff",
+                  "surface-container-highest": "#d1e4ff",
+                  "primary-container": "#2178c3",
+                  "inverse-surface": "#19324b",
+                  "on-primary-fixed-variant": "#00497e",
+                  "outline-variant": "#c0c7d3",
+                  "secondary-fixed-dim": "#74db9d",
+                  "on-tertiary-fixed": "#271900",
+                  "on-primary-container": "#fdfcff",
+                  "on-secondary-container": "#007243"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "xs": "4px",
+                  "margin-mobile": "16px",
+                  "margin-desktop": "40px",
+                  "md": "16px",
+                  "base": "4px",
+                  "lg": "24px",
+                  "gutter": "16px",
+                  "sm": "8px",
+                  "xl": "32px"
+          },
+          "fontFamily": {
+                  "headline-lg-mobile": ["Inter"],
+                  "label-md": ["Inter"],
+                  "label-sm": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "body-md": ["Inter"],
+                  "title-lg": ["Inter"],
+                  "display": ["Inter"],
+                  "headline-lg": ["Inter"],
+                  "headline-md": ["Inter"]
+          },
+          "fontSize": {
+                  "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                  "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                  "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #f8f9ff;
+      color: #011d35;
+      font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .shadow-soft {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopAppBar (JSON Mapping) -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim shadow-sm flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-150 hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BoardEase</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profile" data-alt="A professional headshot of a friendly male property manager in his late 20s, smiling warmly against a blurred office backdrop. The lighting is soft and natural, emphasizing trust and professionalism. The overall image has a clean, high-key modern aesthetic consistent with a corporate rental management platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0bk4tFDFUXL8-sVTXZwyhG83IxppWb7w-aS6qButOlafsMsOHhprbkVy2NMcWQTSQ9CU824-Ld9-DWq8C2sUZvHTG1WqU6PQ9TSQQAlLDyPWiLPF6Gm-NvjGI6XOk1DpEMfJJrbt0LE48OWcpW7YDjZqEla_VVVmzdrTr_Bw2VS2BVCAJ_9YQyLU4uRU016CLrxZxVU5NgUGIb0UJ9zW8b1DfUJQDjT7YXB9t1UQqEF3TfZYnNN4vA2Yg24wPd-jysVX3Rn0P0fs"/>
+</div>
+</header>
+<main class="pt-20 pb-32 px-margin-mobile max-w-2xl mx-auto">
+<!-- Hero Image Section -->
+<div class="relative w-full h-64 mb-6 rounded-xl overflow-hidden shadow-soft">
+<img alt="Room A1" class="w-full h-full object-cover" data-alt="A bright and airy studio room in a modern Philippine dormitory, featuring two minimalist wooden beds with clean white linens and organized study desks. Large windows let in soft morning sunlight, creating a warm and welcoming atmosphere. The walls are a pristine white, accented by subtle light blue decor, following a clean, corporate interior design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmluCnGco8nGvmx4CV1QWUKl_etaFYB6L3RLQ0q9Aoa-ZHeh1x7yEAez7aNfYvvh8q_4dyUZui95bE5mxoEyXrPb3uPZXQvgy992IaqZP6HPowP5PVIYfP_LYwS_0GHBniw7zfE59392c-_5v5b-nGgPTqZo7ii8CCKYdL3ermpXrRNRC_9yIfNf_WHHgJOi1YpWeprKf00Bk3s1rzYuz2OOdbzQ0o3gjpP4ET4v9yPda8zIR9Vzswe6y54MrcoknKMW3lnRHV58"/>
+<div class="absolute top-4 right-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Available
+        </span>
+</div>
+</div>
+<!-- Title & Location -->
+<section class="mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Room A1</h2>
+<p class="text-on-surface-variant flex items-center gap-1 font-body-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+        Metro Manila Housing Complex, Tower 2
+      </p>
+</section>
+<!-- Details Table -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-soft mb-8">
+<!-- Row 1: Status -->
+<div class="flex items-center justify-between px-md py-4 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">info</span>
+</div>
+<span class="font-title-lg text-title-lg text-on-surface">Status</span>
+</div>
+<span class="text-secondary font-headline-md text-headline-md">Available</span>
+</div>
+<!-- Row 2: Capacity -->
+<div class="flex items-center justify-between px-md py-4 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="font-title-lg text-title-lg text-on-surface">Capacity</span>
+</div>
+<span class="text-on-surface-variant font-headline-md text-headline-md">2 persons</span>
+</div>
+<!-- Row 3: Rate -->
+<div class="flex items-center justify-between px-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="font-title-lg text-title-lg text-on-surface">Monthly Rate</span>
+</div>
+<span class="text-primary font-headline-md text-headline-md">₱4,500.00</span>
+</div>
+</div>
+<!-- Description / Amenities Bento-style -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<div class="p-4 rounded-xl bg-surface-container-high border border-outline-variant flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<h4 class="font-title-lg text-title-lg text-on-background">High-speed WiFi</h4>
+<p class="text-on-surface-variant text-label-sm">Fiber connectivity included in the monthly rent.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-high border border-outline-variant flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary">ac_unit</span>
+<h4 class="font-title-lg text-title-lg text-on-background">Air Conditioned</h4>
+<p class="text-on-surface-variant text-label-sm">Individual inverter units for energy efficiency.</p>
+</div>
+</section>
+<!-- Map Placeholder (data-location) -->
+<div class="mb-8 rounded-xl overflow-hidden h-40 border border-outline-variant relative">
+<img alt="Map Location" class="w-full h-full object-cover" data-location="Manila, Philippines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR4hCSrTvP0AlB6PmBymufGEcViljy6hvPpFWfvmWhnt73WuHfycHAVUYuzjv_Yu5ErfV4rslM5F-RDXGmFwIo5q8B9FzSvX436WhtYW9V8mZxej5nHm5VrsLpib4BV8O5zaL6PIj1EGSKiSvyQnHBFn6ezE08UWDcxtAlnBwqWEEsqh3VzDSLzFMmYETKlrChOrqNcCLP7Q1aYhdfzlr0jkrCpxScl5VX0Kyo5mCojgYZBuo3mRTm-FWcwp6sD7L0eLXIlotaBDo"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+<div class="bg-surface px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-label-md">View on Map</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Reservation Action Bottom Bar -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest p-margin-mobile border-t border-outline-variant z-50 flex items-center justify-center">
+<button class="w-full max-w-md bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-headline-md text-headline-md py-4 rounded-xl shadow-lg transition-all active:scale-95 duration-150 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">book_online</span>
+      Reserve This Room
+    </button>
+</div>
+<!-- Interaction Script -->
+<script>
+    document.querySelector('button.bg-primary').addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+      this.classList.replace('bg-primary', 'bg-outline');
+      
+      setTimeout(() => {
+        this.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Reservation Confirmed';
+        this.classList.replace('bg-outline', 'bg-secondary');
+        
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.classList.replace('bg-secondary', 'bg-primary');
+        }, 3000);
+      }, 1500);
+    });
+  </script>
+</body></html>

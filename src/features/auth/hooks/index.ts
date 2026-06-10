@@ -44,3 +44,21 @@ export function useSignOut() {
     },
   });
 }
+
+export function useForgotPassword() {
+  return useMutation({
+    mutationFn: async (email: string) => {
+      const { error } = await api.resetPassword(email);
+      if (error) throw error;
+    },
+  });
+}
+
+export function useResetPassword() {
+  return useMutation({
+    mutationFn: async (password: string) => {
+      const { error } = await api.updatePassword(password);
+      if (error) throw error;
+    },
+  });
+}

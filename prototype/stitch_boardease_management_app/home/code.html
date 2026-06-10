@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BoardEase | Find your next boarding house</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#dbe9ff",
+                    "on-background": "#011d35",
+                    "on-tertiary-fixed-variant": "#5f4100",
+                    "surface-bright": "#f8f9ff",
+                    "primary": "#005ea1",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#91f8b8",
+                    "outline": "#717782",
+                    "surface-container-low": "#eef4ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#fffbff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006d40",
+                    "on-error": "#ffffff",
+                    "tertiary": "#7a5500",
+                    "inverse-primary": "#9fcaff",
+                    "on-secondary-fixed-variant": "#00522f",
+                    "surface-container": "#e4efff",
+                    "tertiary-fixed-dim": "#f8bc4b",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#e9f1ff",
+                    "tertiary-container": "#996c00",
+                    "surface-dim": "#c4dcfd",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d1e4ff",
+                    "on-secondary-fixed": "#002110",
+                    "tertiary-fixed": "#ffdeaa",
+                    "on-primary-fixed": "#001d37",
+                    "secondary-container": "#8ef5b5",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#d2e4ff",
+                    "primary-fixed-dim": "#9fcaff",
+                    "on-surface": "#011d35",
+                    "surface-tint": "#0061a5",
+                    "on-surface-variant": "#414751",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d1e4ff",
+                    "primary-container": "#2178c3",
+                    "inverse-surface": "#19324b",
+                    "on-primary-fixed-variant": "#00497e",
+                    "outline-variant": "#c0c7d3",
+                    "secondary-fixed-dim": "#74db9d",
+                    "on-tertiary-fixed": "#271900",
+                    "on-primary-container": "#fdfcff",
+                    "on-secondary-container": "#007243"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .soft-shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-dim shadow-sm flex items-center justify-between px-margin-mobile h-16">
+<div class="flex items-center gap-3">
+<button class="hover:bg-surface-container-low transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">BoardEase</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 duration-150 transition-transform cursor-pointer">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn6lFHdSqqL2ndcm8kQjwCZYBz9-xFcGeYs_G3CgHGofhGv7v0-JA_iReLaGoOUUGCCGd5oFYuIzY5u_LwaO7sa9WAZORY1_VZ0I4jzsNCdVw_wZO0I6ugZpAw64A1oAwZjFWAtZgNXUpJxVH8k1s6xeiCU6fvD_FP5rzjlH_eax4lpHDWkWWSwX7dsIOhBddpglzpmoFBSleE6TaU-kyS38QUwunz3pskXn3FGaZLbpkexviktbB7Q51Dlwi72hcMpH2dBwT7UE4"/>
+</div>
+</header>
+<main class="flex-grow pt-16 pb-24 overflow-x-hidden">
+<!-- Hero & Search Section -->
+<section class="px-margin-mobile pt-xl pb-lg bg-gradient-to-b from-surface-container-low to-background">
+<div class="max-w-md mx-auto md:max-w-2xl lg:max-w-4xl lg:mx-0">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-xs">Find your next boarding house</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Affordable and comfortable living spaces for students and professionals in Davao City.</p>
+<!-- Search Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border-none bg-surface-container-lowest soft-shadow font-body-md text-body-md focus:ring-2 focus:ring-primary transition-all" placeholder="Search boarding houses…" type="text"/>
+<button class="absolute right-2 bg-primary text-on-primary p-2.5 rounded-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Categories / Quick Filters -->
+<section class="px-margin-mobile mb-xl overflow-x-auto hide-scrollbar flex gap-sm py-2">
+<span class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md whitespace-nowrap cursor-pointer transition-all hover:brightness-110">All Units</span>
+<span class="bg-surface-container-high text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md whitespace-nowrap cursor-pointer transition-all hover:bg-surface-container-highest">Student Housing</span>
+<span class="bg-surface-container-high text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md whitespace-nowrap cursor-pointer transition-all hover:bg-surface-container-highest">Work Lodging</span>
+<span class="bg-surface-container-high text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md whitespace-nowrap cursor-pointer transition-all hover:bg-surface-container-highest">With Wi-Fi</span>
+</section>
+<!-- Featured Properties -->
+<section class="px-margin-mobile">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-lg text-title-lg text-on-surface">Featured Properties</h3>
+<a class="font-label-md text-label-md text-primary font-bold" href="#">See all</a>
+</div>
+<!-- Bento-ish Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Property Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden soft-shadow border border-outline-variant group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A brightly lit, modern student boarding house room in Obrero, Davao City. The space features clean white walls, a sturdy wooden bunk bed with high-quality linens, and a functional study desk with an ergonomic chair. Large windows allow natural tropical sunlight to pour in, creating an inviting and airy atmosphere. The overall style is professional, systematic, and reflects the reliable corporate-modern aesthetic of the BoardEase brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkBJL0-WzSWe-NM0-oiE32TYnpaqI98wlNkTKF_kKBfBplMXr9U64ISbXQRJ4KwUNKr14xWkQ6waM5T2TpYJFqh2fhKFXZZGPONepwg0D7E72_Ht13q_uacRJsxEDcvHKYfMnbe_DFoLKUqG7uHQvrum9CmBtDi9ifbgz1W-poFRu5GXCTxlC4jUP4Q3DcJou4Q8Ckc6XS_9GWtKXgmWky6HvyfjqiaSn9PdFy55qNwCpImT75s6H2rPsq-gGouyQgepQbUMPOLiw"/>
+<div class="absolute top-3 right-3 bg-secondary-container/90 text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">Available</div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg font-label-md text-label-md text-primary font-bold">₱4,500/mo</div>
+</div>
+<div class="p-md">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-xs">Sunrise Boarding House</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-body-md text-body-md">Obrero, Davao City</span>
+</div>
+<div class="flex gap-lg border-t border-outline-variant pt-sm mt-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">wifi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Free Wi-Fi</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">kitchen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Shared Pantry</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden soft-shadow border border-outline-variant group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="relative h-56 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A contemporary dormitory-style residence for young professionals located in Poblacion, Davao City. The interior showcases sleek, minimalist furniture, neutral gray and blue tones, and organized storage solutions. Strategic accent lighting highlights the professional and trustworthy environment designed for urban dwellers. The image captures a clean, secure, and upscale living space consistent with a modern corporate housing portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl3vVeLzJnOC9q7MvlMbPJevcrHCToWb_Nxide8ct3zBMTZRS44s1gDb9VdT95EpJRuyy2-nq_zTMHzRlLItez773fOcz3kYp3D0CszL_M1_YjgbSqQ7MG9C4X9st9TV4RXj0FMh0KBUY5wDkw5GnwWywZ1__YyyCz1svxTUF8nJ4VIOJvxa8kqXMJTGE0tHUZnasxro9V5TcqzVnyr3Odc3O4b6RQNNS5oQWGYnlL30UTmlilwlB64D30VP3PMnTGjxf8EUbLH7U"/>
+<div class="absolute top-3 right-3 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md">Few Units Left</div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg font-label-md text-label-md text-primary font-bold">₱6,000/mo</div>
+</div>
+<div class="p-md">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-xs">City Stay Residences</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-body-md text-body-md">Poblacion, Davao City</span>
+</div>
+<div class="flex gap-lg border-t border-outline-variant pt-sm mt-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">security</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">24/7 Security</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">ac_unit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC Units</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mx-margin-mobile mt-xl mb-md bg-primary-container rounded-2xl p-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-on-primary-container text-[48px] mb-md">domain_add</span>
+<h3 class="font-headline-md text-headline-md text-on-primary-container mb-xs">Own a Property?</h3>
+<p class="font-body-md text-body-md text-on-primary-container/80 mb-lg max-w-[280px]">List your rooms and manage tenants effortlessly with BoardEase.</p>
+<button class="bg-surface-container-lowest text-primary px-xl py-sm rounded-xl font-title-lg text-title-lg font-bold shadow-sm active:scale-95 transition-transform">Get Started</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline bg-surface dark:bg-surface-container-lowest shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-secondary-container/10 rounded-xl px-3 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<!-- Properties -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-label-sm text-label-sm mt-1">Properties</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm mt-1">Search</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple scroll shadow for the app bar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+
+        // Toggle active state visualization (for demo purposes)
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(nav => {
+                    nav.classList.remove('text-primary', 'dark:text-primary-fixed', 'bg-secondary-container/10', 'rounded-xl', 'px-3', 'py-1');
+                    nav.classList.add('text-on-surface-variant', 'dark:text-outline');
+                    nav.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+                });
+                item.classList.add('text-primary', 'dark:text-primary-fixed', 'bg-secondary-container/10', 'rounded-xl', 'px-3', 'py-1');
+                item.classList.remove('text-on-surface-variant', 'dark:text-outline');
+                item.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>
